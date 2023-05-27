@@ -7,13 +7,13 @@ const Navbar = function(props) {
     const user = useSelector((state) => state.user);
 
     return (
-        <div style={{height: "200px", backgroundColor: "lightpink"}} >
-            <h1>User: {user} - Todo List</h1>
+        <div className="navbar bg-dark" data-bs-theme="dark" >
+            <h3 className="text-light">Hello, {user} - Create Todo List</h3>
             <NavLink to="/home" >
-                <button>My Todos</button>
+                <button className="btn btn-light">My Todos</button>
             </NavLink>
             <NavLink to="/form" >
-                <button>New Todo</button>
+                <button className="btn btn-light">New Todo</button>
             </NavLink>
         </div>
     )
