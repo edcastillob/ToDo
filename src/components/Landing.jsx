@@ -20,17 +20,20 @@ const Landing = function(props) {
     };
 
     return (
-        <div style={{height: "450px", backgroundColor: "lightgrey"}} >
+        <div className="row g-3 align-items-center">
+            <div className="col-auto">
             <h1>Todo App</h1>
-            <label>Please enter your name: </label>
+            <label className="form-label"> your name: </label>
             <input
+                className="form-control"
                 type="text"
                 name="input"
                 value={input}
                 placeholder="Enter name..."
                 onChange={handleChange}
-            />
-            <button onClick={handleClick}>Set name</button>
+                />
+            <button className="btn btn-light mt-2" onClick={handleClick}>Set name</button>
+            </div>
         </div>
     )
 };

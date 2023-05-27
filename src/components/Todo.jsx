@@ -15,6 +15,34 @@ const Todo = function({id, text, completed}) {
 
     return (
         <div>
+
+
+
+            
+<table className="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Todo</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">{id}</th>
+      <td> 
+        <Link to={`/detail/${id}`}>            
+        <p style={completed ? {color: "lightgreen"} : {color: "lightpink"} }>{text}</p>
+        </Link>
+        </td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    
+  </tbody>
+</table>
+
             <Link to={`/detail/${id}`}>
                 <h2
                     style={completed ? {color: "lightgreen"} : {color: "lightpink"} }

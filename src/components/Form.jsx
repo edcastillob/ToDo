@@ -1,6 +1,7 @@
 import React from "react";
 import { addTodo } from "../redux/actions";
 import { connect } from "react-redux";
+import  useId  from "react-id-generator";
 
 class Form extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class Form extends React.Component {
         event.preventDefault();
         this.props.addTodo({
             ...this.state,
-            id: Date()
+            id: useId()
         });
         this.setState({
             text: "",
@@ -33,19 +34,22 @@ class Form extends React.Component {
 
     render() {
         return(
-            <div style={{height: "450px", backgroundColor: "lightcyan"}}>
-                <h1>Form</h1>
+            <div className="row g-3 align-items-center">
+            <div className="col-auto">
+                <h1 >Form</h1>
                 <form>
                     <label>New Todo: </label>
                     <input
+                    className="form-control"
                         type="text"
                         name="text"
                         value={this.state.text}
                         placeholder="New todo..."
                         onChange={this.handleChange}
                     />
-                    <button onClick={this.handleClick}>Create</button>
+                    <button  className="btn btn-light mt-2"  onClick={this.handleClick}>Create</button>
                 </form>
+            </div>
             </div>
         )
     }
